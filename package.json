@@ -1,0 +1,42 @@
+{
+  "name": "@extpkg/packager",
+  "version": "1.0.0",
+  "description": "EXT packager utility",
+  "author": "EXT, Inc.",
+  "license": "MIT",
+  "keywords": [
+    "ext",
+    "packager",
+    "rsa"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/extpkg/packager.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "ext-packager": "./bin/cli.js"
+  },
+  "files": [
+    "bin/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.3.3",
+    "@types/node": "^20.8.5",
+    "@types/yargs": "^17.0.28",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "yargs": "^17.7.2"
+  }
+}

@@ -1,0 +1,9 @@
+# Node dependencies
+node_modules
+
+# Build directory
+bin
+
+# Visual Studio Code settings
+.vscode/**/*
+!.vscode/settings.json
