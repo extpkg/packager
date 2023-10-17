@@ -38,6 +38,8 @@ export function keygenSync(options: KeygenOptions) {
   })
 
   // Export key
+  const outDirname = path.dirname(options.privateKeyFile)
+  fs.mkdirSync(outDirname, { recursive: true })
   fs.writeFileSync(options.privateKeyFile, key.privateKey)
   
 }
@@ -76,6 +78,8 @@ export async function keygen(options: KeygenOptions) {
   })
 
   // Export key
+  const outDirname = path.dirname(options.privateKeyFile)
+  await fs.promises.mkdir(outDirname, { recursive: true })
   await fs.promises.writeFile(options.privateKeyFile, key)
 
 }
@@ -159,6 +163,8 @@ export async function pack(options: PackOptions) {
   zip.copy(buffer, 16 + publicKeyLength + signatureLength)
 
   // Save to file
+  const outDirname = path.dirname(options.outFile)
+  await fs.promises.mkdir(outDirname, { recursive: true })
   await fs.promises.writeFile(options.outFile, buffer)
   
 }
