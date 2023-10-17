@@ -5,6 +5,7 @@ import * as packager from './packager'
 // Create args
 const args = yargs(process.argv.slice(2))
 args.scriptName('ext-packager')
+args.epilogue('to show command help use $0 <command> --help')
 args.demandCommand(1)
 args.help('help')
 args.completion()
