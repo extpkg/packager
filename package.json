@@ -1,6 +1,6 @@
 {
   "name": "@extpkg/packager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "EXT packager utility",
   "author": "EXT, Inc.",
   "license": "MIT",
