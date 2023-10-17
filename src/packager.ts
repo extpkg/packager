@@ -100,12 +100,15 @@ export async function pack(options: PackOptions) {
 
   // Validate options
   const force = options.force === undefined ? false : options.force
-  if (!fs.existsSync(options.privateKeyFile)) {
-    throw new Error(`Private key file '${options.privateKeyFile}' does not exist`)
-  } else if (!fs.existsSync(options.sourcePath)) {
+  if (!fs.existsSync(options.sourcePath)) {
     throw new Error(`Source path '${options.sourcePath}' does not exist`)
   } else if (!force && fs.existsSync(options.outFile)) {
     throw new Error(`Output file '${options.outFile}' already exists`)
+  }
+
+  // Create private key if it doesn't exist yet
+  if (!fs.existsSync(options.privateKeyFile)) {
+    await keygen({ privateKeyFile: options.privateKeyFile })
   }
 
   // Import private key
