@@ -41,7 +41,7 @@ args.command('pack <src>', 'package and sign an extension', (yargs) => {
   }).options('out', {
     type: 'string',
     default: undefined,
-    alias: '-o',
+    alias: 'o',
     describe: 'destination file',
   }).option('key', {
     type: 'string',
